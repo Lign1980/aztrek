@@ -1,6 +1,6 @@
 <?php
 
-require_once__DIR__. '/../model/database.php';
+require_once __DIR__. '/../model/database.php';
 
 function debug($var) {
     echo "<pre>";

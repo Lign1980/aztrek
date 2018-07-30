@@ -5,4 +5,3 @@ admin/node_modules/
 *.bak
 uploads/
 config/parameters.php
-_*

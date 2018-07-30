@@ -4,6 +4,6 @@ require_once '../../../model/database.php';
 
 $libelle = $_POST["libelle"];
 
-insertCategorie($libelle);
+insertPays($libelle);
 
 header("Location: index.php");

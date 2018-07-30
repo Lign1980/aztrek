@@ -1,12 +1,12 @@
 <?php
 require_once '../../../model/database.php';
 
-$list_categories = getAllEntities("categorie");
+$list_pays = getAllEntities("pays");
 
 require_once '../../layout/header.php';
 ?>
 
-<h1>Ajouter un projet</h1>
+<h1>Ajouter un sejour</h1>
 
 <form action="insert_query.php" method="post" enctype="multipart/form-data">
     <div class="form-group row">
@@ -46,12 +46,12 @@ require_once '../../layout/header.php';
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Catégorie</label>
+        <label class="col-sm-2 col-form-label">Pays</label>
         <div class="col-sm-10">
-            <select name="categorie_id" class="form-control">
-                <?php foreach ($list_categories as $categorie) : ?>
-                    <option value="<?php echo $categorie["id"]; ?>">
-                        <?php echo $categorie["libelle"]; ?>
+            <select name="pays_id" class="form-control">
+                <?php foreach ($list_pays as $pays) : ?>
+                    <option value="<?php echo $pays["id"]; ?>">
+                        <?php echo $pays["libelle"]; ?>
                     </option>
                 <?php endforeach; ?>
             </select>

@@ -1,0 +1,149 @@
+.header__firstnav {
+    p {
+        color: $black;
+        font-size: 3em;
+        font-weight: bold;
+    }
+}
+
+.header__firstnav--nav{
+    flex-basis: 30%;
+}
+.header__firstnav--logo {
+    width: 100px;
+}
+
+.header__firstnav--text {
+    font-size: 1em;
+}
+
+.header__firstnav--link { 
+    display: flex;
+    align-items: center;
+}
+
+.section1 {
+    h2 {
+        padding: 0.7em 10em;
+        
+    }
+}
+
+.section3 {
+    font-size: 2em;
+    
+}
+
+.section2__aside--text {
+    margin: 90px;
+    h3 {
+        font-size: 1.8em;
+    }
+    p {
+        font-size: 1.5em;
+    }
+}
+
+.section2__textaside {
+    .section2__text {
+        text-align: left;
+        h3 {
+            margin: 0 50px;
+            display: inline-block;
+            color: #fff;
+            font-size: 1.5em;
+            font-weight: normal;
+            border-bottom: 1px solid #fff;
+            padding: 0.3em 0.8em;
+        }
+        p {
+            font-size: 1.5rem;
+        }
+        span {
+            font-weight: bolder;
+            font-size: 1.6rem;
+            padding: 0;
+            
+        }
+    }
+}
+    
+        
+            
+            
+        
+
+    
+
+   
+
+
+
+
+    
+    
+
+
+
+      
+        
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+.header-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.main-nav {
+    display: block;
+    background-color: $black;
+
+    ul {
+        display: flex;
+    }
+
+    a {
+        display: block;
+        color: #fff;
+        padding: 1rem;
+        margin: 0 1rem;
+        &:hover, &:focus {
+            color: lighten($color: $black, $amount: 20%);
+
+    }
+
+    .search-form {
+        margin-top: auto;
+    }
+    
+    .owl-carousel {
+        padding: 80px 60px;
+        .btn {
+            margin-top: auto;
+        }
+        .owl-nav button {
+            top: calc(50% - 1.5rem); //pour centrer les fleches
+        }
+    }
+
+    }
+    .photo_entete1{
+        border-radius: 20px;
+        padding: 10px;
+        
+    }
+}

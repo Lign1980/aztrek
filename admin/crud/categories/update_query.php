@@ -5,6 +5,6 @@ require_once '../../../model/database.php';
 $id = $_POST["id"];
 $libelle = $_POST["libelle"];
 
-updateCategorie($id, $libelle);
+updatePays($id, $libelle);
 
 header("Location: index.php");
