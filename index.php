@@ -93,7 +93,7 @@ get_header("Accueil");
                         <img class="photo_img" src="images/Salvador.png" alt="">
                     </a>
                     <figcaption class="photo_contenu">
-                        <h2 class="photo_titre">Salvator</h2>
+                        <h2 class="photo_titre">Salvador</h2>
                         <p class="photo_jours">8 jours à partir de 1500€</p>
                         <p class="photo_prix">Difficulté
                             <img src="images/shoes.png" alt="">
