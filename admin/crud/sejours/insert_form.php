@@ -22,25 +22,27 @@ require_once '../../layout/header.php';
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Date de début</label>
+        <label class="col-sm-2 col-form-label">Durée</label>
         <div class="col-sm-10">
-            <input type="date" name="date_debut" class="form-control">
+            <input type="number" name="date_debut" class="form-control">
         </div>
     </div>
+    
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Date de fin</label>
-        <div class="col-sm-10">
-            <input type="date" name="date_fin" class="form-control">
-        </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Prix</label>
+        <label class="col-sm-2 col-form-label">Difficultée</label>
         <div class="col-sm-10">
             <input type="number" name="prix" class="form-control">
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Description</label>
+        <label class="col-sm-2 col-form-label">Description courte</label>
+        <div class="col-sm-10">
+            <textarea name="description" class="form-control"></textarea>
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Description longue</label>
         <div class="col-sm-10">
             <textarea name="description" class="form-control"></textarea>
         </div>

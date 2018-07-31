@@ -2,14 +2,14 @@
 require_once '../../../model/database.php';
 
 $id = $_GET["id"];
-$sejour = getOneEntity("sejour", $id);
+$depart = getOneEntity("depart", $id);
 
-$list_pays = getAllEntities("pays");
+$list_sejours = getAllEntities("sejour");
 
 require_once '../../layout/header.php';
 ?>
 
-<h1>Modifier un projet</h1>
+<h1>Modifier un depart</h1>
 
 <form action="update_query.php" method="post" enctype="multipart/form-data">
     <div class="form-group row">
@@ -29,9 +29,9 @@ require_once '../../layout/header.php';
     </div>
     
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Duree</label>
+        <label class="col-sm-2 col-form-label">Date de fin</label>
         <div class="col-sm-10">
-            <input type="number" name="date_fin" value="<?php echo $sejour["date_fin"]; ?>" class="form-control">
+            <input type="date" name="date_fin" value="<?php echo $sejour["date_fin"]; ?>" class="form-control">
         </div>
     </div>
     <div class="form-group row">
@@ -52,10 +52,10 @@ require_once '../../layout/header.php';
         <label class="col-sm-2 col-form-label">Pays</label>
         <div class="col-sm-10">
             <select name="pays_id" class="form-control">
-                <?php foreach ($list_pays as $pays) : ?>
-                    <?php $selected = ($pays["id"] == $pays["pays_id"]) ? "selected" : ""; ?>
-                <option value="<?php echo $pays["id"]; ?>" <?php echo $selected; ?>>
-                        <?php echo $pays["libelle"]; ?>
+                <?php foreach ($list_sejour as $sejour) : ?>
+                    <?php $selected = ($sejour["id"] == $sejour["sejour_id"]) ? "selected" : ""; ?>
+                <option value="<?php echo $sejour["id"]; ?>" <?php echo $selected; ?>>
+                        <?php echo $sejour["libelle"]; ?>
                     </option>
                 <?php endforeach; ?>
             </select>
