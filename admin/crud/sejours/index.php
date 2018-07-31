@@ -15,24 +15,22 @@ require_once '../../layout/header.php';
 <table class="table table-striped table-bordered table-hover">
     <thead>
         <tr>
-            <th>Titre</th>
-            <th>Date début</th>
             <th>Pays</th>
+            <th>Titre</th>
             <th>Photo</th>
-            <th>Coût</th>
+            <th>Durée</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
         <?php foreach ($list_sejours as $sejour) : ?>
         <tr>
+            <td><?php echo $sejour["pays"]; ?></td>
             <td><?php echo $sejour["titre"]; ?></td>
-            <td><?php echo $sejour["date_debut_format"]; ?></td>
-            <td><?php echo $sejour["categorie"]; ?></td>
             <td>
-                <img src="<?php echo SITE_URL . "/uploads/" . $sejour["image"]; ?>" class="img-thumbnail">
+                <img src="<?php echo SITE_URL . "uploads/" . $sejour["image"]; ?>" class="img-thumbnail">
             </td>
-            <td><?php echo $sejour["prix_format"]; ?> €</td>
+            <td><?php echo $sejour["duree"]; ?> </td>
             <td class="col-actions">
                 <form action="delete_query.php" method="post" class="form-delete">
                     <input type="hidden" name="id" value="<?php echo $sejour["id"]; ?>">

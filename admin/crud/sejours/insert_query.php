@@ -17,7 +17,7 @@ $tmp = $_FILES["image"]["tmp_name"];
 move_uploaded_file($tmp, "../../../uploads/" . $image);
 
 // Enregistrement en base de données
-insertProjet($titre, $image, $date_debut, $date_fin, $prix, $description, $pays_id);
+insertSejour($titre, $image, $date_debut, $date_fin, $prix, $description, $pays_id);
 
 // Redirection vers la liste
 header("Location: index.php");
