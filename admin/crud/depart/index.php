@@ -15,11 +15,11 @@ require_once '../../layout/header.php';
 <table class="table table-striped table-bordered table-hover">
     <thead>
         <tr>
-            <th>Pays</th>
-            <th>Titre</th>
-            <th>Photo</th>
-            <th>Durée</th>
-            <th>Actions</th>
+            <th>Date depart</th>
+            <th>Prix</th>
+            <th>Nombre de places</th>
+            <th>Sejour</th>
+            
         </tr>
     </thead>
     <tbody>

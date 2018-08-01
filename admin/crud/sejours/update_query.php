@@ -6,15 +6,15 @@ require_once '../../../model/database.php';
 // Récupération des données du formulaire
 $id = $_POST["id"];
 $titre = $_POST["titre"];
-$date_debut = $_POST["date_debut"];
-$date_fin = $_POST["date_fin"];
-$prix = $_POST["prix"];
-$description = $_POST["description"];
+$duree = $_POST["duree"];
+$difficultee = $_POST["difficultee"];
+$description_courte = $_POST["description_courte"];
+$description_longue = $_POST["description_longue"];
 $pays_id = $_POST["pays_id"];
 
 // Upload de l'image
 if ($_FILES["image"]["error"] == UPLOAD_ERR_NO_FILE) {
-    $sejour = getOneEntity("projet", $id);
+    $sejour = getOneEntity("sejour", $id);
     $image = $sejour["image"];
 } else {
     $image = $_FILES["image"]["name"];
@@ -24,7 +24,7 @@ if ($_FILES["image"]["error"] == UPLOAD_ERR_NO_FILE) {
 }
 
 // Enregistrement en base de données
-updateSejour($id, $titre, $image, $date_debut, $date_fin, $prix, $description, $categorie_id);
+updateSejour($id, $titre, $image, $duree, $difficultee, $description_courte, $description_longue, $pays_id);
 
 // Redirection vers la liste
 header("Location: index.php");

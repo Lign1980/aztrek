@@ -6,9 +6,9 @@ function getAllDeparts(int $limit = 999): array {
 
     $query = "SELECT
                 depart.*,
-                sejour.libelle AS sejour
+                sejour.id AS sejour
             FROM depart
-            INNER JOIN sejour ON sejour.id = depart.sejour_id
+            INNER JOIN sejour ON sejour.id = depart.sejour_id;
             LIMIT :limit;";
 
     $stmt = $connexion->prepare($query);
