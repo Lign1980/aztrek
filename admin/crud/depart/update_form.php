@@ -15,47 +15,37 @@ require_once '../../layout/header.php';
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Titre</label>
         <div class="col-sm-10">
-            <input type="text" name="titre" value="<?php echo $sejour["titre"]; ?>" class="form-control" placeholder="Titre">
-        </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Image</label>
-        <div class="col-sm-1">
-            <img src="../../../uploads/<?php echo $sejour["image"]; ?>"  class="img-responsive img-thumbnail">
-        </div>
-        <div class="col-sm-9">
-            <input type="file" name="image" accept="images/*" class="form-control">
+            <input type="text" name="titre" value="<?php echo $depart["titre"]; ?>" class="form-control" placeholder="Titre">
         </div>
     </div>
     
+    
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Date de fin</label>
+        <label class="col-sm-2 col-form-label">Date de depart</label>
         <div class="col-sm-10">
-            <input type="date" name="date_fin" value="<?php echo $sejour["date_fin"]; ?>" class="form-control">
+            <input type="date" name="date_depart" value="<?php echo $depart["date_depart"]; ?>" class="form-control">
         </div>
     </div>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Prix</label>
         <div class="col-sm-10">
-            <input type="number" name="prix" value="<?php echo $sejour["prix"]; ?>" class="form-control">
+            <input type="number" name="prix" value="<?php echo $depart["prix"]; ?>" class="form-control">
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Description</label>
+        <label class="col-sm-2 col-form-label">Nombres de places</label>
         <div class="col-sm-10">
-            <textarea name="description" class="form-control">
-                <?php echo $sejour["description"]; ?>
-            </textarea>
+            <input type="number" name="nb_places" value="<?php echo $depart["nb_places"]; ?>" class="form-control">
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Pays</label>
+        <label class="col-sm-2 col-form-label">Sejour</label>
         <div class="col-sm-10">
-            <select name="pays_id" class="form-control">
+            <select name="sejour_id" class="form-control">
                 <?php foreach ($list_sejour as $sejour) : ?>
-                    <?php $selected = ($sejour["id"] == $sejour["sejour_id"]) ? "selected" : ""; ?>
-                <option value="<?php echo $sejour["id"]; ?>" <?php echo $selected; ?>>
-                        <?php echo $sejour["libelle"]; ?>
+                    <?php $selected = ($sejour["id"] == $sejour["sejour"]) ? "selected" : ""; ?>
+                <option value="<?php echo $depart["id"]; ?>" <?php echo $selected; ?>>
+                        <?php echo $sejour["titre"]; ?>
                     </option>
                 <?php endforeach; ?>
             </select>

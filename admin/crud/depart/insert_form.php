@@ -1,7 +1,7 @@
 <?php
 require_once '../../../model/database.php';
 
-$list_departs = getAllEntities("depart");
+$list_sejours = getAllSejours();
 
 require_once '../../layout/header.php';
 ?>
@@ -13,18 +13,6 @@ require_once '../../layout/header.php';
         <label class="col-sm-2 col-form-label">Titre</label>
         <div class="col-sm-10">
             <input type="text" name="titre" class="form-control" placeholder="Titre">
-        </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Image</label>
-        <div class="col-sm-10">
-            <input type="file" name="image" accept="images/*" class="form-control">
-        </div>
-    </div>
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Date de début</label>
-        <div class="col-sm-10">
-            <input type="date" name="date_debut" class="form-control">
         </div>
     </div>
     <div class="form-group row">
@@ -42,16 +30,16 @@ require_once '../../layout/header.php';
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Nombre de places</label>
         <div class="col-sm-10">
-            <textarea name="description" class="form-control"></textarea>
+            <input type="number" name="nb_places" class="form-control">
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Pays</label>
+        <label class="col-sm-2 col-form-label">Sejour</label>
         <div class="col-sm-10">
-            <select name="pays_id" class="form-control">
+            <select name="sejour_id" class="form-control">
                 <?php foreach ($list_sejours as $sejour) : ?>
                     <option value="<?php echo $sejour["id"]; ?>">
-                        <?php echo $sejour["libelle"]; ?>
+                        <?php echo $sejour["titre"]; ?>
                     </option>
                 <?php endforeach; ?>
             </select>

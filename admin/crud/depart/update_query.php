@@ -4,13 +4,11 @@ require_once '../../security.php';
 require_once '../../../model/database.php';
 
 // Récupération des données du formulaire
-$id = $_POST["id"];
 $titre = $_POST["titre"];
-$date_debut = $_POST["date_debut"];
-$date_fin = $_POST["date_fin"];
+$date_depart = $_POST["date_depart"];
 $prix = $_POST["prix"];
-$description = $_POST["description"];
-$pays_id = $_POST["pays_id"];
+$nb_places = $_POST["nb_places"];
+$sejour_id = $_POST["sejour_id"];
 
 // Upload de l'image
 if ($_FILES["image"]["error"] == UPLOAD_ERR_NO_FILE) {
@@ -24,7 +22,7 @@ if ($_FILES["image"]["error"] == UPLOAD_ERR_NO_FILE) {
 }
 
 // Enregistrement en base de données
-updateSejour($id, $titre, $image, $date_debut, $date_fin, $prix, $description, $categorie_id);
+insertSejour($titre, $image, $date_depart, $prix, $nb_places, $sejour_id);
 
 // Redirection vers la liste
 header("Location: index.php");

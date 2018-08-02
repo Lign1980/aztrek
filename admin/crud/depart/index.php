@@ -1,4 +1,4 @@
-<?php
+    <?php
 require_once '../../../model/database.php';
 
 $list_departs = getAllDeparts();
@@ -15,10 +15,12 @@ require_once '../../layout/header.php';
 <table class="table table-striped table-bordered table-hover">
     <thead>
         <tr>
+            <th>Nom du pays</th>
+            <th>Titre du sejour</th>
             <th>Date depart</th>
             <th>Prix</th>
             <th>Nombre de places</th>
-            <th>Sejour</th>
+            <th>Action</th>
             
         </tr>
     </thead>
@@ -26,11 +28,11 @@ require_once '../../layout/header.php';
         <?php foreach ($list_departs as $depart) : ?>
         <tr>
             <td><?php echo $depart["pays"]; ?></td>
-            <td><?php echo $depart["titre"]; ?></td>
-            <td>
-                <img src="<?php echo SITE_URL . "uploads/" . $depart["image"]; ?>" class="img-thumbnail">
-            </td>
-            <td><?php echo $depart["duree"]; ?> </td>
+            <td><?php echo $depart["sejour"]; ?></td>
+            <td><?php echo $depart["date_depart"]; ?></td>
+            <td><?php echo $depart["prix"]; ?></td>
+            <td><?php echo $depart["nb_places"]; ?></td>
+            
             <td class="col-actions">
                 <form action="delete_query.php" method="post" class="form-delete">
                     <input type="hidden" name="id" value="<?php echo $depart["id"]; ?>">

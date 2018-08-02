@@ -2,7 +2,7 @@
 require_once 'lib/functions.php';
 require_once 'model/database.php';
 
-//$list_projects = getAllProjects(3);
+$list_pays = getAllEntities("pays");
 
 get_header("Accueil");
 ?>
