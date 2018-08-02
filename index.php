@@ -3,6 +3,8 @@ require_once 'lib/functions.php';
 require_once 'model/database.php';
 
 $list_pays = getAllEntities("pays");
+$list_sejours = getBestSejours(3);
+
 
 get_header("Accueil");
 ?>
@@ -17,56 +19,22 @@ get_header("Accueil");
 
     <div class="first_section">
         <div class="container">
-            <article class="photo">
-                <figure class="photo_entete1">
-                    <a href="">
-                        <img class="photo_img" src="images/Tresor_du_ Yucatan .png" alt="">
-                    </a>
-                    <figcaption class="photo_contenu1">
-                        <h3 class="photo_titre">Trésor de Yucatan</h3>
-                        <p class="photo_jours">8 jours à partir de 1500€</p>
-                        <p class="photo_prix">Difficulté
-                            <img src="images/Fichier 1.png" alt="">
-                        </p>
-                        <p class="photo_prix">Prochain départ le 24/07/18</p>
-                    </figcaption>
-                    <a class="photo_liens" href="pages-2.html">Par ici l'aventure!</a>
-                </figure>
-            </article>
-
-            <article class="photo">
-                <figure class="photo_entete2">
-                    <a href="">
-                        <img class="photo_img" src="images/Caminando Mexico18.png" alt="">
-                    </a>
-                    <figcaption class="photo_contenu1">
-                        <h3 class="photo_titre">Caminendo Mexico</h3>
-                        <p class="photo_jours">14 jours à partir de 2500€</p>
-                        <p class="photo_prix">Difficulté
-                            <img src="images/Fichier 1.png" alt="">
-                        </p>
-                        <p class="photo_prix">Prochain départ le 29/08/18</p>
-                    </figcaption>
-                    <a class="photo_liens photo_lien-une" href="pages-3.html">Par ici l'aventure!</a>
-                </figure>
-            </article>
-
-            <article class="photo">
-                <figure class="photo_entete3">
-                    <a href="">
-                        <img class="photo_img" src="images/Les_volcans .png" alt="">
-                    </a>
-                    <figcaption class="photo_contenu1">
-                        <h3 class="photo_titre">Les Volcans</h3>
-                        <p class="photo_jours">8 jours à partir de 1500€</p>
-                        <p class="photo_prix">Difficulté
-                            <img src="images/Fichier 1.png" alt="">
-                        </p>
-                        <p class="photo_prix">Prochain départ le 24/07/18</p>
-                    </figcaption>
-                    <a class="photo_liens" href="pages-4.html">Par ici l'aventure!</a>
-                </figure>
-            </article>
+            <?php foreach ($list_sejours as $sejour) : ?>
+                <article class="photo">
+                    <figure class="photo_entete1">
+                        <a href="">
+                            <img class="photo_img" src="uploads/<?php echo $sejour["image"]; ?>" alt="">
+                        </a>
+                        <figcaption class="photo_contenu1">
+                            <h3 class="photo_titre"><?php echo $sejour["titre"]; ?></h3>
+                            <p class="photo_jours">8 jours à partir de <?php echo $sejour["prix"]; ?>€</p>
+                            <p class="photo_prix">Difficulté : <?php echo $sejour["difficultee"]; ?></p>
+                            <p class="photo_prix">Prochain départ le <?php echo $sejour["date_depart"]; ?></p>
+                        </figcaption>
+                        <a class="photo_liens" href="pages-2.html">Par ici l'aventure!</a>
+                    </figure>
+                </article>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
@@ -75,6 +43,7 @@ get_header("Accueil");
 
 <section class="section2">
     <div class="section2__title">
+        
         <h2>Coup de Coeur</h2>
         <p>Guatémala</p>
         <p>Le Trek Maya</p>
@@ -87,6 +56,7 @@ get_header("Accueil");
 
     <div class="section3__ntrek">
         <div class="second_section">
+            
             <article class="photo">
                 <figure class="photo_entete4">
                     <a href="">
@@ -137,6 +107,7 @@ get_header("Accueil");
                     <a class="photo_liens" href="pages-4.html">Vite j'en profite!</a>
                 </figure>
             </article>
+            
         </div>
     </div>
 </section>
@@ -191,6 +162,7 @@ get_header("Accueil");
                     </figure>
                 </div>
             </article>
+            
         </div>
 </section>
 
@@ -211,4 +183,3 @@ get_header("Accueil");
 
 </section>
 
-<?php get_footer(); ?>

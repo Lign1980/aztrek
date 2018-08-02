@@ -1,13 +1,13 @@
 <nav class="header__secondnav" role="navigation">
     <ul class="header__secondnav--menu container">
         <li>
-            <a href="#" class="header__secondnav--link">Accueil</a>
+            <a href="index.php" class="header__secondnav--link">Accueil</a>
         </li>
         <li>
             <a href="#" class="header__secondnav--link">Qui sommes-nous</a>
         </li>
         <li>
-            <a href="#" class="header__secondnav--link">Destinations</a>
+            <a href="liste_pays.php" class="header__secondnav--link">Destinations</a>
         </li>
         <li>
             <a href="#" class="header__secondnav--link">Inscription</a>

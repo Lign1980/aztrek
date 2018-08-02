@@ -43,19 +43,18 @@ function getDepart(int $id): array {
     return $stmt->fetch();
 }
 
-function insertDepart(string $titre, string $image, string $date_depart, string $prix, string $nb_places, string $sejour ): int {
+function insertDepart(string $date_depart, string $prix, string $nb_places, string $sejour_id ): int {
     /* @var $connexion PDO */
     global $connexion;
     
-    $query = "INSERT INTO sejour (titre, image, date_depart, prix, nb_places, sejour, ) VALUES (:titre, :image, :date_depart, :prix, :nb_places, :sejour,)";
+    $query = "INSERT INTO depart ( date_depart, prix, nb_places, sejour_id ) VALUES (:date_depart, :prix, :nb_places, :sejour_id)";
     
     $stmt = $connexion->prepare($query);
-    $stmt->bindParam(":titre", $titre);
-    $stmt->bindParam(":image", $image);
-    $stmt->bindParam(":date_depart", $date-depart);
+    
+    $stmt->bindParam(":date_depart", $date_depart);
     $stmt->bindParam(":prix", $prix);
     $stmt->bindParam(":nb_places", $nb_places);
-    $stmt->bindParam(":sejour", $sejour);
+    $stmt->bindParam(":sejour_id", $sejour_id);
     $stmt->execute();
     
     return $connexion->lastInsertId();
@@ -63,29 +62,24 @@ function insertDepart(string $titre, string $image, string $date_depart, string 
 
 
 
-function updateDepart(int $id, string $titre, string $image, string $date_depart, string $prix, string $nb_places, string $sejour ): int {
+function updateDepart(int $id, string $date_depart, string $prix, string $nb_places, string $sejour_id ): int {
     /* @var $connexion PDO */
     global $connexion;
     
     $query = "UPDATE depart
-                SET titre = :titre,
-                    image = :image,
-                    date_depart = :date_depart,
+                SET date_depart = :date_depart,
                     prix = :prix,
                     nb_places= :nb_places,
-                    sejour = :sejour,
-                    
+                    sejour_id = :sejour_id,    
                 WHERE id = :id
             ";
-    
+                    
     $stmt = $connexion->prepare($query);
     $stmt->bindParam(":id", $id);
-    $stmt->bindParam(":titre", $titre);
-    $stmt->bindParam(":image", $image);
-    $stmt->bindParam(":date_depart", $date-depart);
+    $stmt->bindParam(":date_depart", $date_depart);
     $stmt->bindParam(":prix", $prix);
     $stmt->bindParam(":nb_places", $nb_places);
-    $stmt->bindParam(":sejour", $sejour);
+    $stmt->bindParam(":sejour_id", $sejour_id);
     $stmt->execute();
     
     return $connexion->lastInsertId();

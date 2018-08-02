@@ -12,12 +12,7 @@ require_once '../../layout/header.php';
 <h1>Modifier un depart</h1>
 
 <form action="update_query.php" method="post" enctype="multipart/form-data">
-    <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Titre</label>
-        <div class="col-sm-10">
-            <input type="text" name="titre" value="<?php echo $depart["titre"]; ?>" class="form-control" placeholder="Titre">
-        </div>
-    </div>
+    
     
     
     <div class="form-group row">
@@ -42,9 +37,9 @@ require_once '../../layout/header.php';
         <label class="col-sm-2 col-form-label">Sejour</label>
         <div class="col-sm-10">
             <select name="sejour_id" class="form-control">
-                <?php foreach ($list_sejour as $sejour) : ?>
-                    <?php $selected = ($sejour["id"] == $sejour["sejour"]) ? "selected" : ""; ?>
-                <option value="<?php echo $depart["id"]; ?>" <?php echo $selected; ?>>
+                <?php foreach ($list_sejours as $sejour) : ?>
+                    <?php $selected = ($sejour["id"] == $depart["sejour"]) ? "selected" : ""; ?>
+                <option value="<?php echo $sejour["id"]; ?>" <?php echo $selected; ?>>
                         <?php echo $sejour["titre"]; ?>
                     </option>
                 <?php endforeach; ?>

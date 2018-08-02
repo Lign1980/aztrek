@@ -17,6 +17,31 @@ function getAllSejours(int $limit = 999): array {
     return $stmt->fetchAll();
 }
 
+function getBestSejours(int $limit = 999): array {
+    global $connexion;
+
+    $query = "SELECT
+                sejour.*,
+                pays.libelle AS pays,
+                COUNT(reservation.id) AS nb_reservations,
+                MIN(depart.prix) AS prix,
+                MIN(depart.date_depart) AS date_depart
+            FROM sejour
+            INNER JOIN pays ON pays.id = sejour.pays_id
+            LEFT JOIN depart ON depart.sejour_id = sejour.id
+            LEFT JOIN reservation ON reservation.depart_id = depart.id
+            WHERE (depart.date_depart > NOW() OR depart.date_depart IS NULL)
+            GROUP BY sejour.id
+            ORDER BY nb_reservations DESC
+            LIMIT :limit;";
+
+    $stmt = $connexion->prepare($query);
+    $stmt->bindParam(":limit", $limit);
+    $stmt->execute();
+
+    return $stmt->fetchAll();
+}
+
 
 function getSejour(int $id): array {
     global $connexion;
